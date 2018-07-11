@@ -1,8 +1,12 @@
 package com.example.marrerami.appfood;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,12 +39,33 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        /*
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
+        }*/
+
+        final AlertDialog.Builder dialogClose = new AlertDialog.Builder(this);
+
+        // Dialogo de confirmacion para salir de la app.
+        dialogClose.setIcon(R.drawable.ic_lock_power_off)
+                .setTitle("Cerrar")
+                .setMessage("¿Desea salir de la aplicación?")
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        MainActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogClose.setCancelable(true);
+                    }
+                })
+                .show();
     }
 
     @Override
@@ -53,6 +78,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                Intent go_info = new Intent(MainActivity.this, Info.class);
+                startActivity(go_info);
+            }
+        });
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
@@ -73,7 +105,22 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_login) {
             // Handle the camera action
+            new Handler().post(new Runnable() {
+                @Override
+                public void run() {
+                    Intent go_login = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(go_login);
+                }
+            });
+
         } else if (id == R.id.nav_ubicaciones) {
+            new Handler().post(new Runnable() {
+                @Override
+                public void run() {
+                    Intent go_maps = new Intent(MainActivity.this, MapsActivity.class);
+                    startActivity(go_maps);
+                }
+            });
 
         } else if (id == R.id.nav_ajustes) {
 
