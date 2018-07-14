@@ -1,0 +1,12 @@
+   div div { border: solid;
+              width: 30%; 
+              height: 400px;
+              margin: 1%;
+              float: left; }
+
+    @media screen and (max-width: 720px) {
+        div div { border: solid;
+                  width: 90%; 
+                  height: 400px;
+                  margin: 5%; }
+                }
