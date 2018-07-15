@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Restaurante </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/> 
+<link rel="stylesheet" type="text/css" href="../DataTables/css/dataTables.bootstrap4.min.css">
+
+ 
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Recursos Humanos</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!--<li class="dropdown">-->
+                    <li>
+                        <a onclick="empleados();" href="#">
+                            <i class="fa fa-user-plus" style="color: #B00816;"></i> 
+                        </a>
+                    </li>
+                
+                   <li>
+                        <a onclick="planilla()" href="#">
+                            <i class="fa fa-tasks" style="color: #B00816;"></i>
+                        </a>
+                    </li>
+                
+             
+                <!--    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                -->
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw" style="color: #B00816;"></i> <i class="fa fa-caret-down" style="color: #B00816;"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="index.html" style="color: #B00816;"><i class="fa fa-dashboard fa-fw" style="color: #B00816;"></i> Elementos del modulo</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Administracion</a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Finanzas</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Recursos Humanos</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Pedidos de clientes</a>
+                          
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <!--
+                        <li class="active">
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a class="active" href="blank.html">Blank Page</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">Login Page</a>
+                                </li>
+                            </ul>
+                        -->
+                            <!-- /.nav-second-level -->
+                     <!--   </li>
+                    -->
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid" id="div-reservaciones">
+                <div class="row">
+                    <div class="col-lg-12 table-responsive">
+                    
+                        <table class="table table-borderless">
+                            <thead>
+                            <h2 class=""><img src="../Imagenes/LogoDosColores.png" style="width: 10%; height: 10%;"></img>Reservaciones Eventos</h2>
+                            </thead>
+                        </table>
+
+                        <div>
+                                <label>Eventos</label>
+                                <select name="slc-eventos">
+                                    <option>Noche Benefica</option>
+                                    <option>Cumpleaños</option>
+                                    <option>Dia de la madre</option>
+                                    <option>Quermes</option>
+                                </select>
+                            </div>
+                            <form action="" method="post">
+                                <table class="table table-borderless" >
+                                    <thead>
+                                        <td>Datos</td>
+                                        <td>Campos</td>
+                                    </thead>
+
+                                    <tr>
+                                        <td><label for="nombre">Nombre:</label></td>
+                                        <td><input type="text" id="nombre" name="nombre" /></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="telefono">Telefono</label></td>
+                                        <td><input type="tel" name="telefono"></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="evento">Evento:</label></td>
+                                        <td><input type="text" id="evento" name="evento" /></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="descripcion">Descripcion:</label></td>
+                                        <td><input type="text" id="descripcion" name="descripcion" /></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="fecha_inicio">Fecha Inicio</label></td>
+                                        <td><input type="date" name="fecha_inicio"></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="fecha_final">Fecha Final</label></td>
+                                        <td><input type="date" name="fecha_final"></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="hora_inicio">Hora Inicio</label></td>
+                                        <td><input type="time" name="hora_inicio"></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="hora_final">Hora Final</label></td>
+                                        <td><input type="time" name="hora_final"></td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><label for="bonificacion">Bonificacion</label></td>
+                                        <td><input type="text" name="bonificacion"></td>
+                                    </tr>
+                                    <br/>                                   
+
+                                </table>
+                            <div style="text-align-last: center;">
+                                <button type="submit">Guardar</button>
+                                <button type="submit">Editar</button>
+                                <button type="submit">Eliminar</button>
+                            </div>
+                            </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/controladorRecursosHumanos.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
