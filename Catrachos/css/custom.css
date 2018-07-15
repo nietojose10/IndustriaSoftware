@@ -1,0 +1,33 @@
+.navbar-default{
+	background-color: #3F0C11!important;
+	border-color: #3F0C11!important;
+}
+
+.sidebar ul li a.active {
+    background-color: #3F0C11!important;
+    border-color: #3F0C11!important;
+}
+
+.sidebar ul li {
+  border-bottom: 1px solid #3F0C11 !important;
+}
+.sidebar ul li a.active {
+  background-color: #3F0C11 !important;
+}
+
+element.style {
+    color: #71592f!important;
+}
+
+.espaciado{
+	padding-top: 10%; 
+}
+
+a {
+    color: #777;
+
+   } 
+
+#div-graficos{
+	display: block;
+}   
